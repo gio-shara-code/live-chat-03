@@ -4,7 +4,9 @@
   "description": "This is a demo project for experimenting",
   "main": "./src/index.tsx",
   "scripts": {
-    "test": "echo \"Test is wrote yet\""
+    "start": "cross-env PRODUCTION_MODE=development webpack serve --open --config webpack.config.js",
+    "build": "cross-env PRODUCTION_MODE=production webpack --config webpack.config.js",
+    "my-script": "cross-env PRODUCTION_MODE=production webpack"
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,23 @@
   "author": "Giorgi Sharashenidze",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-typescript": "^7.12.13",
+    "@types/css": "0.0.31",
+    "@types/react": "^17.0.1",
+    "babel-loader": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.0.2",
+    "html-webpack-plugin": "^5.0.0",
+    "style-loader": "^2.0.0",
     "webpack": "^5.21.2",
-    "webpack-cli": "^4.5.0"
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   }
 }
