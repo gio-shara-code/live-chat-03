@@ -28,6 +28,10 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js', '.css']
     },
     plugins: [
-        new HtmlWebpackPlugin()
+        new HtmlWebpackPlugin({
+            filename: "index.html",
+            publicPath: path.resolve(__dirname, "out"),
+            template: "./out/index.html"
+        })
     ]
 }
