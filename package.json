@@ -4,9 +4,9 @@
   "description": "This is a demo project for experimenting",
   "main": "./src/index.tsx",
   "scripts": {
-    "start": "cross-env PRODUCTION_MODE=development webpack serve --open --config webpack.config.js",
-    "build": "cross-env PRODUCTION_MODE=production webpack --config webpack.config.js",
-    "my-script": "cross-env PRODUCTION_MODE=production webpack"
+    "start": "cross-env NODE_ENV=development webpack serve --open --config webpack.config.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "my-script": "cross-env NODE_ENV=production webpack"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,7 @@
     "@babel/preset-typescript": "^7.12.13",
     "@types/css": "0.0.31",
     "@types/react": "^17.0.1",
+    "@types/react-dom": "^17.0.0",
     "babel-loader": "^8.2.2",
     "cross-env": "^7.0.3",
     "css-loader": "^5.0.2",

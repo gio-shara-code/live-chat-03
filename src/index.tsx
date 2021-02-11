@@ -2,8 +2,18 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 
-const root = document.createElement('div')
-root.setAttribute('id', 'root')
-document.body.appendChild(root)
+class Component extends React.Component{
 
-ReactDOM.render( <h1>Hello Wrld</h1> , document.getElementById('root'))
+    handleClick() {
+        console.log('Hello World', this)
+    }
+
+    render() {
+        return <div>
+            <h1>Hello World!</h1>
+            <button onClick={this.handleClick.bind(this)}>Hello World!</button>
+        </div>
+    }
+}
+
+ReactDOM.render(<Component/>, document.getElementById('root'))

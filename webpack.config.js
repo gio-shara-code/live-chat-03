@@ -2,8 +2,8 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-    mode: process.env.PRODUCTION_MODE,
-    entry: './src/index.tsx',
+    mode: process.env.NODE_ENV,
+    entry: './src',
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'out')
@@ -28,6 +28,9 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js', '.css']
     },
     plugins: [
-        new HtmlWebpackPlugin()
+        new HtmlWebpackPlugin( {
+            template: './public/index.html',
+            title: 'React App'
+        })
     ]
 }
