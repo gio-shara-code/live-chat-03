@@ -16,16 +16,20 @@ module.exports = {
                 loader: 'babel-loader',
             },
             {
-                test: /\.css$/,
+                test: /\.s[ac]ss$/i,
                 use: [
-                    'style-loader',
-                    'css-loader'
-                ]
-            }
+                  // Creates `style` nodes from JS strings
+                  "style-loader",
+                  // Translates CSS into CommonJS
+                  "css-loader",
+                  // Compiles Sass to CSS
+                  "sass-loader",
+                ],
+              }
         ]
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js', '.css']
+        extensions: ['.tsx', '.ts', '.js', '.scss', '.sass']
     },
     plugins: [
         new HtmlWebpackPlugin( {

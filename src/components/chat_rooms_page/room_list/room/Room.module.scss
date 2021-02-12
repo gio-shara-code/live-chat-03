@@ -1,0 +1,13 @@
+@import '../../../../index.scss';
+
+.Room {
+    color: $tertiary-color;
+    cursor: pointer;
+    font-size: 40px;
+    transition: $translation-time;
+    margin: 20px 0;
+    &:hover {
+        color: $white-color;
+        font-size: 50px;
+    }
+}

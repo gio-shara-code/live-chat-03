@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+//Colors
+$primary-color: #ff9292;
+$secondary-color: #ffb4b4;
+$tertiary-color: #ffdcdc;
+$white-color: #ffffff;
+$black-color: #222222;
+
+//Font Families
+$lato: 'Lato', sans-serif;
+
+//Device Sizes
+$mobile: 245px;
+
+//Other
+$translation-time: 100ms;
+*, body {
+    margin: 0;
+    padding: 0;
+    background-color: $primary-color;
+    font-family: $lato;
+    color: $black-color;
+}
+
+h1 {
+    font-size: 80px;
+}
+
+h2 {
+    font-size: 60px;
+}

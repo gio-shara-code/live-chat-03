@@ -1,0 +1,1 @@
+export enum Room {One, Two, Three}

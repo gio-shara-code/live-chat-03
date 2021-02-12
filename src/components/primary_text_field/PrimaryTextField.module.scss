@@ -1,0 +1,32 @@
+@import '../../index.scss';
+
+.PrimaryTextField {
+    outline: 0;
+    border: 0;
+    background-color: #fff;
+    font-size: 50px;
+    padding: 2px 5px;
+    border-radius: 5px;
+    border: $primary-color;
+    text-align: center;
+    transition: 200ms;
+
+    &:focus {
+        border: lightgrey 5px solid;
+        border-radius: 8px;
+    }
+}
+
+.Error{
+    font-size: 30px;
+    color: red;
+    transition: opacity 200ms ease-in;
+}
+
+.ErrorActive {
+    opacity: 1;
+}
+
+.ErrorInActive{
+   opacity: 0;
+}
