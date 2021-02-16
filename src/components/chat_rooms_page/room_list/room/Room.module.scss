@@ -1,13 +1,19 @@
-@import '../../../../index.scss';
+@use '../../../../index.scss' as index;
 
-.Room {
-    color: $tertiary-color;
-    cursor: pointer;
-    font-size: 40px;
-    transition: $translation-time;
-    margin: 20px 0;
-    &:hover {
-        color: $white-color;
+li{
+    margin: 10px 0;
+    .Room{
+        padding: 5px 20px;
+        text-decoration: none;
+        color: index.$tertiary-color;
+        cursor: pointer;
         font-size: 50px;
+        transition: index.$translation-time;
+    }
+
+    .RoomActive {
+        color: index.$primary-color;
+        background-color: index.$white-color;
+        border-radius: 10px;  
     }
 }

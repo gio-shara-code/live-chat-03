@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
-import classes from './NicknamePage.module.scss';
+import React, { useState, useEffect } from 'react'
+import style from './NicknamePage.module.scss';
 import PrimaryTextField from '../primary_text_field/PrimaryTextField'
 import PrimaryButton from '../primary_button/PrimaryButton'
-import {nicknameGetError, isNicknameValid} from '../../utils/input_validation'
-export default function NicknamePage(props: {callbackNickname}) {
+import { nicknameGetError, isNicknameValid } from '../../utils/input_validation'
+import AnimatedBox from '../animated_box/AnimatedBox'
+export default function NicknamePage(props: { callbackNickname }) {
     const [nickname, setNickname] = useState('')
     const [nickNameError, setNicknameError] = useState(null)
-
 
     function handleNicknameChange(e) {
         const nickname = e.target.value;
@@ -19,29 +19,33 @@ export default function NicknamePage(props: {callbackNickname}) {
     function handleButtonClick(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
         e.preventDefault()
         e.stopPropagation()
-        if(isNicknameValid(nickNameError)) props.callbackNickname(nickname)
+        if (isNicknameValid(nickNameError)) props.callbackNickname(nickname)
     }
 
     function handleBodyTap(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
-        if(nickNameError) setNicknameError(null)
+        if (nickNameError) setNicknameError(null)
     }
 
     function handleNicknameFieldKeyPress(e: React.KeyboardEvent<HTMLInputElement>) {
-        if(e.code === 'Enter') {
-            if(isNicknameValid(nickNameError)) props.callbackNickname(nickname)
+        if (e.code === 'Enter') {
+            if (isNicknameValid(nickNameError)) props.callbackNickname(nickname)
         }
     }
 
     return (
-        <div className={classes.NicknamePage} onClick={handleBodyTap}>
-            <h1>Nickname</h1>
-            <PrimaryTextField value={nickname}
-                onChange={handleNicknameChange}
-                placeholder='E.g. __gio__' 
-                error={nickNameError}
-                onKeyPress={handleNicknameFieldKeyPress}/>
-            <PrimaryButton active={!nickNameError && nickNameError != null}
-            onClick={handleButtonClick}>Next</PrimaryButton>
+        <div className={style.NicknamePage} onClick={handleBodyTap}>
+            <AnimatedBox>
+                <h1>Nickname</h1>
+                <PrimaryTextField value={nickname}
+                    onChange={handleNicknameChange}
+                    placeholder='E.g. __gio__'
+                    error={nickNameError}
+                    onKeyPress={handleNicknameFieldKeyPress} />
+                <PrimaryButton active={!nickNameError && nickNameError != null}
+                    onClick={handleButtonClick}>Next</PrimaryButton>
+            </AnimatedBox>
+
+
         </div>
     )
 }

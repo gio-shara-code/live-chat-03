@@ -11,10 +11,12 @@ $black-color: #222222;
 $lato: 'Lato', sans-serif;
 
 //Device Sizes
-$mobile: 245px;
+$mobile-min-width: 415px;
 
 //Other
 $translation-time: 100ms;
+$page-slidein-time: 500ms;
+
 *, body {
     margin: 0;
     padding: 0;

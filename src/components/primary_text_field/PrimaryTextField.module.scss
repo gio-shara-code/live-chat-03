@@ -1,4 +1,4 @@
-@import '../../index.scss';
+@use '../../index.scss' as index;
 
 .PrimaryTextField {
     outline: 0;
@@ -7,9 +7,10 @@
     font-size: 50px;
     padding: 2px 5px;
     border-radius: 5px;
-    border: $primary-color;
+    border: index.$primary-color;
     text-align: center;
     transition: 200ms;
+    color: index.$primary-color;
 
     &:focus {
         border: lightgrey 5px solid;

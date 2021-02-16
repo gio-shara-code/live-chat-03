@@ -1,0 +1,11 @@
+@use '../../../index.scss' as index;
+.ChatInput {    
+    outline: 0;
+    font-size: 30px;
+    color: index.$white-color;
+    padding: 5px;
+    border: none;
+    width: 50%;
+    border-bottom: 2px index.$white-color solid;
+    margin-bottom: 5px;
+}
