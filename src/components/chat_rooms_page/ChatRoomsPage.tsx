@@ -19,17 +19,16 @@ export default function ChatRoomsPage(props: { roomCallback?, backCallback}) {
             <AnimatedBox>
                 <h1>Choose a Room</h1>
                 <RoomList>
-                    <ChatRoom onClick={()=> currentRoom == null && handleRoomClick(Room.One)}
-                    isActive={currentRoom == Room.One}>Room 01</ChatRoom>
-                    <ChatRoom onClick={()=> currentRoom == null && handleRoomClick(Room.Two)}
-                    isActive={currentRoom == Room.Two}>Room 02</ChatRoom>
-                    <ChatRoom onClick={()=> currentRoom == null && handleRoomClick(Room.Three)}
-                    isActive={currentRoom == Room.Three}>Room 03</ChatRoom>
+                    <ChatRoom onClick={()=> currentRoom == null ? handleRoomClick(Room.One) : null}
+                    isActive={currentRoom == Room.One}>Room-1</ChatRoom>
+                    <ChatRoom onClick={()=> currentRoom == null ? handleRoomClick(Room.Two) : null}
+                    isActive={currentRoom == Room.Two}>Room-2</ChatRoom>
+                    <ChatRoom onClick={()=> currentRoom == null ? handleRoomClick(Room.Three) : null}
+                    isActive={currentRoom == Room.Three}>Room-3</ChatRoom>
                 </RoomList>
                 <SecondaryButton 
-                onClick={currentRoom == null && props.backCallback}
-                isActive={currentRoom == null}
-                >Back</SecondaryButton>
+                onClick={currentRoom == null ? props.backCallback : null}
+                isActive={currentRoom == null}>Back</SecondaryButton>
             </AnimatedBox>
         </div>
     )

@@ -36,12 +36,14 @@ export default function NicknamePage(props: { callbackNickname }) {
         <div className={style.NicknamePage} onClick={handleBodyTap}>
             <AnimatedBox>
                 <h1>Nickname</h1>
-                <PrimaryTextField value={nickname}
+                <PrimaryTextField
+                    value={nickname}
                     onChange={handleNicknameChange}
                     placeholder='E.g. __gio__'
                     error={nickNameError}
                     onKeyPress={handleNicknameFieldKeyPress} />
-                <PrimaryButton active={!nickNameError && nickNameError != null}
+                <PrimaryButton 
+                    active={!nickNameError && nickNameError != null}
                     onClick={handleButtonClick}>Next</PrimaryButton>
             </AnimatedBox>
 

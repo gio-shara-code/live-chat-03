@@ -3,26 +3,39 @@ import style from './ChatPage.module.scss'
 import {Room} from '../../enums';
 import { io, Socket } from 'socket.io-client';
 import ChatController from './chat_controller/ChatController'
+import { AuthUser, UserConnection } from '../../models'
+import { getRandomUid } from '../../utils/random_generators'
+import ChatArea from './chat_area/ChatArea';
+
 export default function ChatPage(props: {
     room: Room;
     nickname: string;
 }) {
-    const [messages, setMessages] = useState([])
-    const [socket, _] = useState(():Socket=> {
+
+    const [userConnection, _] = useState(():UserConnection=> {
+        const authUser: AuthUser = {
+            room: (props.room + 1) || 1,
+            user: {
+                uid: getRandomUid(props.nickname || '__gio__'),
+                enteredOn: Date.now(),
+                nickname: props.nickname || '__gio__'
+            }
+        }
         const socket = io('ws://localhost:3000', { 
-            auth: {
-                nickname: 'Giorgi',
-                room: '1'
-            },
-            hostname: 'localhost'
+            auth: authUser,
+            hostname: 'localhost',
         });
-        
-        return socket
+        socket.on('message', (msg)=> console.log(msg))
+        return {
+            socket: socket,
+            user: authUser.user
+        }
     })
+
     return (
         <div className={style.ChatPage}>
-            
-            {messages.map(msg => <p>msg</p>)}
+            <h1>Welcome to the Room-{props.room + 1} </h1>
+            <ChatArea userConnection={userConnection}/>
             <ChatController/>
         </div>
     )

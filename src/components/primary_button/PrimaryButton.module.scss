@@ -11,6 +11,7 @@
     color: $primary-color;
     border-radius: 5px;
     transition: $translation-time;
+    cursor: pointer;
 }
 
 .Active {
@@ -20,4 +21,5 @@
 
 .InActive {
     background-color: $tertiary-color;
+    cursor: unset;
 }

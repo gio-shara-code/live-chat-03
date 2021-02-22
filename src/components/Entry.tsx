@@ -3,6 +3,7 @@ import NicknamePage from './nickname_page/NicknamePage'
 import ChatRoomsPage from './chat_rooms_page/ChatRoomsPage'
 import ChatPage from './chat_page/ChatPage'
 import {Room} from '../enums'
+
 enum Page{
     Nickname,
     ChatRooms,
@@ -10,7 +11,7 @@ enum Page{
 }
 
 export default function Entry() {
-    const [page, setPage] = useState(Page.Nickname)
+    const [page, setPage] = useState(Page.Chat)
     const [nickname, setNickname] = useState()
     const [room, setRoom] = useState(null)
 
@@ -31,8 +32,9 @@ export default function Entry() {
             currentPage =  <NicknamePage callbackNickname={ handleNicknamePageCallback }/>;
             break;
         case Page.ChatRooms:
-            currentPage = <ChatRoomsPage roomCallback={handleRoomCallback}
-            backCallback={()=>setPage(Page.Nickname)}/>
+            currentPage = <ChatRoomsPage 
+            roomCallback={handleRoomCallback}
+            backCallback={()=> setPage(Page.Nickname)}/>
             break;
         case Page.Chat:
             currentPage = <ChatPage 
