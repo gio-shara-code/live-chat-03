@@ -1,10 +1,10 @@
 {
-    "compilerOptions": {
-        "lib": ["DOM"],
-        "target":"ES2015",
-        "module": "CommonJs",
-        "allowJs": true,
-        "jsx": "react",
-        "esModuleInterop": true
-    }
+  "compilerOptions": {
+    "lib": ["DOM"],
+    "target": "ES2015",
+    "module": "CommonJs",
+    "allowJs": true,
+    "jsx": "react",
+    "esModuleInterop": true
+  }
 }
