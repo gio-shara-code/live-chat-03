@@ -8,12 +8,7 @@ describe("PrimaryTextField", () => {
 
   it("input renders and placeholder working properly", () => {
     const { getByRole } = render(
-      <PrimaryTextField
-        error="error"
-        placeholder="gio"
-        value="value"
-        onChange={() => {}}
-      />
+      <PrimaryTextField error="error" placeholder="gio" />
     );
     const input: HTMLInputElement | HTMLElement = getByRole("textbox");
 
