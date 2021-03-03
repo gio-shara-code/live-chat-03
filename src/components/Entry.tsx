@@ -12,7 +12,7 @@ enum Page {
 
 export default function Entry() {
   const [page, setPage] = useState(Page.Nickname);
-  const [nickname, setNickname] = useState('');
+  const [nickname, setNickname] = useState("");
   const [room, setRoom] = useState(null);
 
   let currentPage;
