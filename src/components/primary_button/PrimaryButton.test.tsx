@@ -17,7 +17,7 @@ describe("PrimaryButton", () => {
     const { getByRole } = render(
       <PrimaryButton active={false}>Click Me</PrimaryButton>
     );
-    
+
     //act & assert
     expect(getByRole("button")).toHaveClass("PrimaryButton InActive", {
       exact: true,
