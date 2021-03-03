@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./Room.module.scss";
 
-export default function Room(props: {
+export default function ChatRoom(props: {
   onClick;
   children: string;
   isActive: boolean;

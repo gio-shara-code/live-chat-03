@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import style from "./ChatPage.module.scss";
 import { Room } from "../../enums";
-import { io, Socket } from "socket.io-client";
+import { io } from "socket.io-client";
 import ChatController from "./chat_controller/ChatController";
 import { AuthUser, UserConnection } from "../../models";
-import { getRandomUid } from "../../utils/random_generators";
 import ChatArea from "./chat_area/ChatArea";
 
 export default function ChatPage(props: { room: Room; nickname: string }) {
