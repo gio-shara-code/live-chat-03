@@ -8,5 +8,17 @@ describe("ChatRoom", () => {
     expect(getByRole("chat-room-a")).toHaveTextContent("Hello");
   });
 
-  it("Hello World", () => {});
+  it("renders component as active", () => {
+    const { getByRole } = render(<ChatRoom isActive />);
+    expect(getByRole("chat-room-a")).toHaveClass("Room RoomActive", {
+      exact: true,
+    });
+  });
+
+  it("renders component as inactive", () => {
+    const { getByRole } = render(<ChatRoom isActive={false} />);
+    expect(getByRole("chat-room-a")).toHaveClass("Room", {
+      exact: true,
+    });
+  });
 });
