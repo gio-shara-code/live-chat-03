@@ -7,6 +7,7 @@ import {
   isNicknameValid,
 } from "../../utils/input_validation";
 import AnimatedBox from "../animated_box/AnimatedBox";
+import PTF from "../primary_text_field/PrimaryTextField";
 export default function NicknamePage(props: {
   callbackNickname(nickanme: string): void;
 }) {
@@ -14,9 +15,10 @@ export default function NicknamePage(props: {
   const [nickNameError, setNicknameError] = useState(null);
 
   function handleNicknameChange(e) {
-    setNickname(e.target.value);
-
-    const error = nicknameValidation(nickname.trim());
+    const newNickname: string = e.target.value;
+    setNickname(newNickname);
+    
+    const error = nicknameValidation(newNickname.trim());
     setNicknameError(error);
   }
 

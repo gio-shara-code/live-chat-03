@@ -1,33 +1,30 @@
 @use '../../index.scss' as index;
 
 .PrimaryTextField {
-    outline: 0;
-    border: 0;
-    background-color: #fff;
-    font-size: 50px;
-    padding: 2px 5px;
-    border-radius: 5px;
-    border: index.$primary-color;
-    text-align: center;
-    transition: 200ms;
-    color: index.$primary-color;
+  outline: 0;
+  border: 0;
+  background-color: #fff;
+  font-size: 50px;
+  padding: 2px 5px;
+  border-radius: 5px;
+  border: index.$primary-color;
+  text-align: center;
+  transition: 200ms;
+  color: index.$primary-color;
 
-    &:focus {
-        border: lightgrey 5px solid;
-        border-radius: 8px;
-    }
+  &:focus {
+    border: lightgrey 5px solid;
+    border-radius: 8px;
+  }
 }
 
-.Error{
-    font-size: 30px;
-    color: red;
-    transition: opacity 200ms ease-in;
+.Error {
+  font-size: 30px;
+  color: red;
+  transition: opacity 200ms ease-in;
+  opacity: 1;
 }
 
-.ErrorActive {
-    opacity: 1;
-}
-
-.ErrorInActive{
-   opacity: 0;
+.ErrorInActive {
+  opacity: 0;
 }

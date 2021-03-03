@@ -1,9 +1,9 @@
 import React from "react";
 import style from "./SecondaryButton.module.scss";
 export default function SecondaryButton(props: {
-  onClick;
+  onClick?;
   children: string;
-  isActive?: boolean;
+  isActive: boolean;
 }) {
   let btnStyle = [style.SecondaryButton];
   if (!props.isActive) btnStyle.push(style.InActive);
