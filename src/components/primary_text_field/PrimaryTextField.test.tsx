@@ -19,13 +19,13 @@ describe("PrimaryTextField", () => {
     });
   });
 
-  it("does show error", () => {
+  it("does show error and checks the class name", () => {
     const { getByRole } = render(<PrimaryTextField error="error" />);
     expect(getByRole(pErrorRoleName)).toHaveTextContent(/^error$/);
     expect(getByRole(pErrorRoleName)).toHaveClass("Error", { exact: true });
   });
 
-  it("doesn't show error", () => {
+  it("doesn't show error and checks a class names", () => {
     const { getByRole } = render(<PrimaryTextField />);
     expect(getByRole(pErrorRoleName)).toHaveTextContent("");
     expect(getByRole(pErrorRoleName)).toHaveClass("Error ErrorInActive", {
