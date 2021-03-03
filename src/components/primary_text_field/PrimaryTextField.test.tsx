@@ -32,19 +32,14 @@ describe("PrimaryTextField", () => {
       exact: true,
     });
   });
-  it("onChange and value property are working properly", function () {
-    this.value = "";
-    const handleEvent = jest.fn((e) => (this.value += e.target.value));
-    const { getByRole, rerender } = render(
-      <PrimaryTextField onChange={handleEvent} value={this.value} />
-    );
+  it("onChange is working", () => {
+    const handleEvent = jest.fn();
+    const { getByRole } = render(<PrimaryTextField onChange={handleEvent} />);
     userEvent.type(getByRole("textbox"), "123");
-    rerender(<PrimaryTextField value={this.value} />);
     expect(handleEvent).toBeCalledTimes(3);
-    expect(getByRole("textbox")).toHaveValue("123");
   });
 
-  it.only("value attrubute passed", () => {
+  it("value attrubute passed", () => {
     const { getByRole } = render(
       <PrimaryTextField onChange={() => {}} value="value" />
     );
