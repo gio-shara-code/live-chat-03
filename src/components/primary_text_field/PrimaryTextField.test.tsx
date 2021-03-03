@@ -33,13 +33,22 @@ describe("PrimaryTextField", () => {
     });
   });
   it("onChange is working", () => {
-    const handleEvent = jest.fn();
-    const { getByRole } = render(<PrimaryTextField onChange={handleEvent} />);
+    const handleChange = jest.fn();
+    const { getByRole } = render(<PrimaryTextField onChange={handleChange} />);
     userEvent.type(getByRole("textbox"), "123");
-    expect(handleEvent).toBeCalledTimes(3);
+    expect(handleChange).toBeCalledTimes(3);
   });
 
-  it("value attrubute passed", () => {
+  it("onKeyPressed is working", () => {
+    const handleKeyPress = jest.fn();
+    const { getByRole } = render(
+      <PrimaryTextField onKeyPress={handleKeyPress} />
+    );
+    userEvent.type(getByRole("textbox"), "{enter}");
+    expect(handleKeyPress).toHaveBeenCalledTimes(1);
+  });
+
+  it("value attribute passed", () => {
     const { getByRole } = render(
       <PrimaryTextField onChange={() => {}} value="value" />
     );
