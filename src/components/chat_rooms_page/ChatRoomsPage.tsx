@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import style from "./ChatRoomsPage.module.scss";
 import RoomList from "./room_list/RoomList";
-import ChatRoom from "./room_list/room/Room";
+import ChatRoom from "./room_list/room/ChatRoom";
 import { Room } from "../../enums";
 import AnimatedBox from "../animated_box/AnimatedBox";
 import SecondaryButton from "../secondary_button/SecondaryButton";
