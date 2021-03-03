@@ -3,7 +3,6 @@ import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import userEvent from "@testing-library/user-event";
 import PrimaryTextField from "./PrimaryTextField";
-import { renderIntoDocument } from "react-dom/test-utils";
 describe("PrimaryTextField", () => {
   const pErrorRoleName = "display-error";
 
@@ -18,12 +17,9 @@ describe("PrimaryTextField", () => {
     );
     const input: HTMLInputElement | HTMLElement = getByRole("textbox");
 
-    if (input instanceof HTMLInputElement) {
+    if (input instanceof HTMLInputElement)
       expect(input.placeholder).toBe("gio");
-      expect(input.value).toBe("value");
-    }
-
-    expect(getByRole("textbox")).toHaveClass("PrimaryTextField", {
+    expect(input).toHaveClass("PrimaryTextField", {
       exact: true,
     });
   });
