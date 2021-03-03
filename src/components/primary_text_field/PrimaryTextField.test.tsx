@@ -43,4 +43,11 @@ describe("PrimaryTextField", () => {
     expect(handleEvent).toBeCalledTimes(3);
     expect(getByRole("textbox")).toHaveValue("123");
   });
+
+  it.only("value attrubute passed", () => {
+    const { getByRole } = render(
+      <PrimaryTextField onChange={() => {}} value="value" />
+    );
+    expect(getByRole("textbox")).toHaveValue("value");
+  });
 });
