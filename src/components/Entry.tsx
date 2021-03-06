@@ -30,7 +30,10 @@ export default function Entry() {
   switch (page) {
     case Page.Nickname:
       currentPage = (
-        <NicknamePage callbackNickname={handleNicknamePageCallback} />
+        <NicknamePage
+          pageTitle="Nickname"
+          callbackNickname={handleNicknamePageCallback}
+        />
       );
       break;
     case Page.ChatRooms:

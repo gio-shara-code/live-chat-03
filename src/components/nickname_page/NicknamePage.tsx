@@ -9,7 +9,8 @@ import {
 import AnimatedBox from "../animated_box/AnimatedBox";
 import PTF from "../primary_text_field/PrimaryTextField";
 export default function NicknamePage(props: {
-  callbackNickname(nickanme: string): void;
+  callbackNickname(nickname: string): void;
+  pageTitle: string;
 }) {
   const [nickname, setNickname] = useState("");
   const [nickNameError, setNicknameError] = useState(null);
@@ -17,7 +18,7 @@ export default function NicknamePage(props: {
   function handleNicknameChange(e) {
     const newNickname: string = e.target.value;
     setNickname(newNickname);
-    
+
     const error = nicknameValidation(newNickname.trim());
     setNicknameError(error);
   }
@@ -43,7 +44,7 @@ export default function NicknamePage(props: {
   return (
     <div className={style.NicknamePage} onClick={handleBodyTap}>
       <AnimatedBox>
-        <h1>Nickname</h1>
+        <h1>{props.pageTitle}</h1>
         <PrimaryTextField
           value={nickname}
           onChange={handleNicknameChange}

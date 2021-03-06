@@ -35,7 +35,6 @@ export default function ChatPage(props: { room: Room; nickname: string }) {
       };
     }
   );
-  console.log(userConnection);
   return (
     <div className={style.ChatPage}>
       <h1 style={{ textAlign: "center" }}>
