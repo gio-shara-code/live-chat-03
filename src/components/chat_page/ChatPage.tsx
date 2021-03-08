@@ -27,6 +27,7 @@ export default function ChatPage(props: { room: Room; nickname: string }) {
         auth: authUser,
         hostname: "localhost",
       });
+
       authUser.user.uid = socket.id;
 
       return {
