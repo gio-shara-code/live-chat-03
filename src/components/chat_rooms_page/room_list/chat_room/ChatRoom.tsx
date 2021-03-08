@@ -9,14 +9,12 @@ export default function ChatRoom(props: {
   let roomStyle = [style.Room];
   if (props.isActive) roomStyle.push(style.RoomActive);
   return (
-    <li>
-      <a
-        role="chat-room-a"
-        onClick={props.onClick}
-        className={roomStyle.join(" ")}
-      >
-        {props.children}
-      </a>
-    </li>
+    <button
+      role="chat-room-a"
+      onClick={props.onClick}
+      className={roomStyle.join(" ")}
+    >
+      {props.children}
+    </button>
   );
 }

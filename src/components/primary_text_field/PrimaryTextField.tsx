@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./PrimaryTextField.module.scss";
-
+import InputError from "../input_error/InputError";
 export default function PrimaryTextField(props: {
   placeholder?: string;
   value?: string;
@@ -13,12 +13,9 @@ export default function PrimaryTextField(props: {
   if (!props.error) errorStyle.push(style.ErrorInActive);
 
   return (
-    <div>
-      <p role="display-error" className={errorStyle.join(" ")}>
-        {props.error}
-      </p>
+    <div className={style.PrimaryTextFieldContainer}>
+      <InputError error={props.error} />
       <input
-        className={style.PrimaryTextField}
         value={props.value}
         onChange={props.onChange}
         placeholder={props.placeholder}

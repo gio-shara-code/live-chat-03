@@ -6,8 +6,7 @@ export default function PrimaryButton(props: {
   onClick?;
 }) {
   let btnStyle = [style.PrimaryButton];
-  if (!props.active) btnStyle.push(style.InActive);
-
+  if (props.active) btnStyle.push(style.Active);
   return (
     <button className={btnStyle.join(" ")} onClick={(e) => props.onClick(e)}>
       {props.children}

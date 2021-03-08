@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import style from "./ChatPage.module.scss";
 import { Room } from "../../enums";
 import { io } from "socket.io-client";
-import ChatController from "./chat_controller/ChatController";
 import { AuthUser, UserConnection } from "../../models";
-import ChatArea from "./chat_area/ChatArea";
-
+import TopLeftPosition from "../../layouts/TopLeftPosition";
+import ArrowLeftIcon from "../arrow_left_icon/ArrowLeftIcon";
+import ChatView from "./chat_view/ChatView";
+import ParticipantsView from "./participants_view/ParticipantsView";
 export default function ChatPage(props: { room: Room; nickname: string }) {
   useEffect(() => {
     window.addEventListener("beforeunload", (ev) => {
@@ -38,11 +39,11 @@ export default function ChatPage(props: { room: Room; nickname: string }) {
   );
   return (
     <div className={style.ChatPage}>
-      <h1 style={{ textAlign: "center" }}>
-        Welcome to the Room-{props.room + 1}
-      </h1>
-      <ChatArea userConnection={userConnection} />
-      <ChatController />
+      <ChatView room="Demo Room" />
+      <ParticipantsView />
+      <TopLeftPosition>
+        <ArrowLeftIcon />
+      </TopLeftPosition>
     </div>
   );
 }

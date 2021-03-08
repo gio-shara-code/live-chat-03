@@ -1,20 +1,17 @@
 @use '../../index.scss' as index;
 
-.AnimatedBox{
-    animation-name: slidein;
-    animation-duration: index.$page-slidein-time;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
+.AnimatedBox {
+  animation-name: slidein;
+  animation-duration: index.$page-slidein-time;
 }
 
 @keyframes slidein {
-    from {
-        opacity: 0;
-        margin-left: -70%;
-    }
-    to {
-        opacity: 1;
-        margin-left: 0%;
-    }
+  from {
+    opacity: 0;
+    margin-left: -2000px;
+  }
+  to {
+    opacity: 1;
+    margin-left: 0%;
+  }
 }

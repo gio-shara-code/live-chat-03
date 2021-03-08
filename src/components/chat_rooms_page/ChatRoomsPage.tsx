@@ -5,6 +5,7 @@ import ChatRoom from "./room_list/chat_room/ChatRoom";
 import { Room } from "../../enums";
 import AnimatedBox from "../animated_box/AnimatedBox";
 import SecondaryButton from "../secondary_button/SecondaryButton";
+import Center from "../../layouts/Center";
 
 export default function ChatRoomsPage(props: { roomCallback?; backCallback }) {
   const [currentRoom, setRoom] = useState(null);
@@ -15,9 +16,11 @@ export default function ChatRoomsPage(props: { roomCallback?; backCallback }) {
     }, 1000);
   }
   return (
-    <div className={style.ChatRoomsPage}>
-      <AnimatedBox>
-        <h1>Choose a Room</h1>
+    <AnimatedBox>
+      <div className={style.ChatRoomsPage}>
+        <Center>
+          <h1>Choose a Room</h1>
+        </Center>
         <RoomList>
           <ChatRoom
             onClick={() =>
@@ -50,7 +53,7 @@ export default function ChatRoomsPage(props: { roomCallback?; backCallback }) {
         >
           Back
         </SecondaryButton>
-      </AnimatedBox>
-    </div>
+      </div>
+    </AnimatedBox>
   );
 }

@@ -1,6 +1,7 @@
 .RoomList {
-    list-style: none;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
 }

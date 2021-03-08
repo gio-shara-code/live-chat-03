@@ -12,21 +12,21 @@ describe("PrimaryButton", () => {
     expect(getByRole("button")).toHaveTextContent("Click Me");
   });
 
-  it("renders as inactive", () => {
+  it("renders as active", () => {
     //arrange
     const { getByRole } = render(
-      <PrimaryButton active={false}>Click Me</PrimaryButton>
+      <PrimaryButton active>Click Me</PrimaryButton>
     );
 
     //act & assert
-    expect(getByRole("button")).toHaveClass("PrimaryButton InActive", {
+    expect(getByRole("button")).toHaveClass("PrimaryButton Active", {
       exact: true,
     });
   });
 
-  it("is active and renders", () => {
+  it("is inactive and renders", () => {
     const { getByRole } = render(
-      <PrimaryButton active>Click Me</PrimaryButton>
+      <PrimaryButton active={false}>Click Me</PrimaryButton>
     );
     expect(getByRole("button")).toHaveClass("PrimaryButton", { exact: true });
   });

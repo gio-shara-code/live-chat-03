@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
 //Colors
 $primary-color: #ff9292;
@@ -8,27 +8,103 @@ $white-color: #ffffff;
 $black-color: #222222;
 
 //Font Families
-$lato: 'Lato', sans-serif;
+$lato: "Lato", sans-serif;
 
 //Device Sizes
 $mobile-min-width: 415px;
 
 //Other
 $translation-time: 100ms;
-$page-slidein-time: 500ms;
+$page-slidein-time: 0.7s;
 
-*, body {
-    margin: 0;
-    padding: 0;
-    background-color: $primary-color;
-    font-family: $lato;
-    color: $black-color;
+*,
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  background-color: $primary-color;
+  font-family: $lato;
+  color: $black-color;
 }
 
 h1 {
-    font-size: 80px;
+  font-size: 2.4rem;
 }
 
 h2 {
-    font-size: 60px;
+  font-size: 1.7rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+input {
+  outline: 0;
+  border: none;
+  padding: 5px 2.5px;
+  width: 100%;
+}
+
+button {
+  font-size: 1.3rem;
+  margin: 10px 0;
+  outline: 0;
+  border: none;
+  width: 70%;
+  padding: 5px 2.5px;
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  //Tablet
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 3.2rem;
+  }
+
+  h3 {
+    font-size: 2.7rem;
+  }
+
+  input {
+    font-size: 2rem;
+    padding: 15px 5px;
+  }
+
+  button {
+    font-size: 2rem;
+    padding: 15px 5px;
+    width: 50%;
+  }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1024px) {
+  //Tablet
+  h1 {
+    font-size: 5.2rem;
+  }
+
+  h2 {
+    font-size: 3.8rem;
+  }
+
+  h3 {
+    font-size: 3rem;
+  }
+
+  input {
+    font-size: 2.5rem;
+    padding: 25px 10px;
+  }
+
+  button {
+    font-size: 2.5rem;
+    padding: 25px 10px;
+    width: 40%;
+  }
 }

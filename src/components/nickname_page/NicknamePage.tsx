@@ -8,6 +8,7 @@ import {
 } from "../../utils/input_validation";
 import AnimatedBox from "../animated_box/AnimatedBox";
 import PTF from "../primary_text_field/PrimaryTextField";
+import Center from "../../layouts/Center";
 export default function NicknamePage(props: {
   callbackNickname(nickname: string): void;
   pageTitle: string;
@@ -42,8 +43,8 @@ export default function NicknamePage(props: {
   }
 
   return (
-    <div className={style.NicknamePage} onClick={handleBodyTap}>
-      <AnimatedBox>
+    <AnimatedBox>
+      <div className={style.NicknamePage} onClick={handleBodyTap}>
         <h1>{props.pageTitle}</h1>
         <PrimaryTextField
           value={nickname}
@@ -58,7 +59,7 @@ export default function NicknamePage(props: {
         >
           Next
         </PrimaryButton>
-      </AnimatedBox>
-    </div>
+      </div>
+    </AnimatedBox>
   );
 }
