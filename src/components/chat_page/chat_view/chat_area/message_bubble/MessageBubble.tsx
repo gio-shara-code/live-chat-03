@@ -10,13 +10,13 @@ export default function MessageBubble(props: {
   const contentStyle = [styles.Content];
 
   if (props.itsMe) {
-    chatBubbleStyle.push(styles.ItsMeChatBubble);
+    chatBubbleStyle.push(styles.ItsMeMessageBubble);
     contentStyle.push(styles.ItsMeContent);
   }
 
   return (
     <div className={chatBubbleStyle.join(" ")}>
-      <span className={styles.From}>{props.message.author}</span>
+      <span className={styles.Author}>{props.message.author}</span>
       <div className={contentStyle.join(" ")}>{props.message.content}</div>
       <div>{getChatTimestamp(props.message.sentOn)}</div>
     </div>

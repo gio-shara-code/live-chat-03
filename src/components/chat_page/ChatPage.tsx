@@ -13,11 +13,11 @@ export default function ChatPage(props: { room: Room; nickname: string }) {
   const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
-    window
-      .matchMedia("(max-width: 768px)")
-      .addEventListener("change", (mediaQuery: MediaQueryListEvent) => {
-        setIsMobile(mediaQuery.matches);
-      });
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mediaQuery.matches);
+    mediaQuery.addEventListener("change", (mediaQuery: MediaQueryListEvent) => {
+      setIsMobile(mediaQuery.matches);
+    });
     // window.addEventListener("beforeunload", (ev) => {
     //   ev.preventDefault();
     //   userConnection.socket.close();
@@ -73,8 +73,6 @@ export default function ChatPage(props: { room: Room; nickname: string }) {
             <FaBars
               fill="black"
               size="inherit"
-              height="auto"
-              width="auto"
               onClick={(e) => handleMenuBarClick(e)}
             />
           </IconComponent>
