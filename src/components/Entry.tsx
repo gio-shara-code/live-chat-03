@@ -11,7 +11,7 @@ enum Page {
 }
 
 export default function Entry() {
-  const [page, setPage] = useState(Page.ChatRooms);
+  const [page, setPage] = useState(Page.Chat);
   const [nickname, setNickname] = useState("");
   const [room, setRoom] = useState(null);
 

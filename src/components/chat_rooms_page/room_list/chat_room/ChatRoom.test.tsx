@@ -4,7 +4,7 @@ import "@testing-library/jest-dom/extend-expect";
 import ChatRoom from "./ChatRoom";
 import userEvent from "@testing-library/user-event";
 describe("ChatRoom", () => {
-  const aLinkRole = "chat-room-a";
+  const aLinkRole = "chat-room";
   it("renders children", () => {
     const { getByRole } = render(<ChatRoom>Hello</ChatRoom>);
     expect(getByRole(aLinkRole)).toHaveTextContent("Hello");

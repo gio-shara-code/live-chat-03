@@ -4,7 +4,10 @@
   color: index.$tertiary-color;
   cursor: pointer;
   transition: index.$translation-time;
+  margin: 2.5px 0;
+  border: 1px solid;
 }
+
 .RoomActive {
   color: index.$primary-color;
   background-color: index.$white-color;

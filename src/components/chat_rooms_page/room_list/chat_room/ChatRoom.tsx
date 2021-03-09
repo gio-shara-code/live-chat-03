@@ -10,7 +10,7 @@ export default function ChatRoom(props: {
   if (props.isActive) roomStyle.push(style.RoomActive);
   return (
     <button
-      role="chat-room-a"
+      role="chat-room"
       onClick={props.onClick}
       className={roomStyle.join(" ")}
     >

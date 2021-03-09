@@ -1,13 +1,12 @@
 import React from "react";
-import Center from "../../../layouts/Center";
 import style from "./ParticipantsView.module.scss";
 
-export default function ParticipantsView() {
+export default function ParticipantsView(props: { visible?: boolean }) {
+  let participantsStyle = [style.ParticipantsView];
+  if (props.visible) participantsStyle.push(style.Visible);
   return (
-    <div className={style.ParticipantsView}>
-      <Center>
-        <h1>Participant List</h1>
-      </Center>
+    <div className={participantsStyle.join(" ")}>
+      <h3>Participant List</h3>
     </div>
   );
 }
