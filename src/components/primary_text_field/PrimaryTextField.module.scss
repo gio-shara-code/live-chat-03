@@ -4,28 +4,20 @@
   display: flex;
   flex-flow: column;
   align-items: center;
-  width: 90%;
 }
+
 .PrimaryTextFieldContainer input {
   background-color: #fff;
   border-radius: 5px;
   border: index.$primary-color;
   text-align: center;
   color: index.$primary-color;
+  width: 100%;
+  padding: 10px;
   transition: 200ms;
+
   &:focus {
     border: lightgrey 1px solid;
     border-radius: 6px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .PrimaryTextFieldContainer {
-    width: 70%;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .PrimaryTextFieldContainer {
-    width: 60%;
   }
 }

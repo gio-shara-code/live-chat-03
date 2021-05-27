@@ -1,0 +1,28 @@
+.ChatView {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  height: inherit;
+  width: 100%;
+
+  h3 {
+    text-transform: uppercase;
+    border-bottom: 2px solid white;
+    padding: 10px 0 5px 0;
+    margin: 0;
+    color: white;
+  }
+
+  .sendIcon {
+    width: 50px;
+    height: auto;
+    padding: 10px;
+  }
+  @media only screen and (max-width: 768px) {
+    .sendIcon {
+      padding: 2px;
+      height: auto;
+      width: 30px;
+    }
+  }
+}

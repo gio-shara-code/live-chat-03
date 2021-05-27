@@ -1,54 +1,40 @@
-import React, { useState } from "react";
-import NicknamePage from "./nickname_page/NicknamePage";
-import ChatRoomsPage from "./chat_rooms_page/ChatRoomsPage";
-import ChatPage from "./chat_page/ChatPage";
-import { Room } from "../enums";
+import React, {useState} from "react"
+import NicknamePage from "../pages/nickname_page/NicknamePage"
+import ChatRoomsPage from "../pages/chat_rooms_page/ChatRoomsPage"
+import ChatPage from "../pages/chat_page/ChatPage"
+import {Page, Room} from "../enums"
+import {v4} from "uuid"
 
-enum Page {
-  Nickname,
-  ChatRooms,
-  Chat,
-}
-
-export default function Entry() {
-  const [page, setPage] = useState(Page.Chat);
-  const [nickname, setNickname] = useState("");
-  const [room, setRoom] = useState(null);
-
-  let currentPage;
+const entry = () => {
+  const [page, setPage] = useState<Page>(Page.Chat)
+  const [nickname, setNickname] = useState("")
+  const [room, setRoom] = useState(null)
 
   function handleNicknamePageCallback(nickname: string) {
-    setNickname(nickname);
-    setPage(Page.ChatRooms);
+    setNickname(nickname)
+    setPage(Page.ChatRooms)
   }
 
   function handleRoomCallback(room: Room) {
-    setRoom(room);
-    setPage(Page.Chat);
+    setRoom(room)
+    setPage(Page.Chat)
   }
 
-  switch (page) {
-    case Page.Nickname:
-      currentPage = (
-        <NicknamePage
-          pageTitle="Nickname"
-          callbackNickname={handleNicknamePageCallback}
-        />
-      );
-      break;
-    case Page.ChatRooms:
-      currentPage = (
+  return (
+    <>
+      {page === Page.Nickname && <NicknamePage callbackNickname={handleNicknamePageCallback} />}
+
+      {page === Page.ChatRooms && (
         <ChatRoomsPage
           roomCallback={handleRoomCallback}
           backCallback={() => setPage(Page.Nickname)}
         />
-      );
-      break;
-    case Page.Chat:
-      currentPage = <ChatPage room={room} nickname={nickname} />;
-      break;
-    default:
-      throw new Error();
-  }
-  return <>{currentPage}</>;
+      )}
+      {page === Page.Chat && (
+        <ChatPage user={{enteredOn: Date.now(), nickname: nickname, room: room || "3", id: v4()}} />
+      )}
+    </>
+  )
 }
+
+export default entry

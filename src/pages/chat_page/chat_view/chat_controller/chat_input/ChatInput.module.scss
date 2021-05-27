@@ -1,0 +1,14 @@
+@use '../../../../../index.scss' as index;
+
+.ChatInput {
+  color: #222;
+  border-bottom: 3px index.$white-color solid;
+  padding: 5px;
+  font-size: 25px;
+}
+
+@media only screen and (max-width: 768px) {
+  .ChatInput {
+    font-size: 18px;
+  }
+}

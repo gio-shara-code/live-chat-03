@@ -1,10 +1,13 @@
 {
   "compilerOptions": {
-    "lib": ["DOM"],
+    "lib": ["DOM", "ESNext"],
     "target": "ES2015",
-    "module": "CommonJs",
     "allowJs": true,
     "jsx": "react",
-    "esModuleInterop": true
-  }
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "module": "CommonJs",
+    "outDir": "dist"
+  },
+  "include": ["./src/**/*"]
 }

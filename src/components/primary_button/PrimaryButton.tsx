@@ -4,11 +4,16 @@ export default function PrimaryButton(props: {
   active: boolean;
   children;
   onClick?;
+  role?: string;
 }) {
   let btnStyle = [style.PrimaryButton];
   if (props.active) btnStyle.push(style.Active);
   return (
-    <button className={btnStyle.join(" ")} onClick={(e) => props.onClick(e)}>
+    <button
+      role={props.role}
+      className={btnStyle.join(" ")}
+      onClick={(e) => props.onClick(e)}
+    >
       {props.children}
     </button>
   );

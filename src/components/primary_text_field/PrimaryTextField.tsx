@@ -1,21 +1,23 @@
-import React from "react";
-import style from "./PrimaryTextField.module.scss";
-import InputError from "../input_error/InputError";
+import React from "react"
+import style from "./PrimaryTextField.module.scss"
+import InputError from "../input_error/InputError"
 export default function PrimaryTextField(props: {
-  placeholder?: string;
-  value?: string;
-  onChange?;
-  error?: string | null;
-  onKeyPress?;
+  placeholder?: string
+  value?: string
+  onChange?
+  error?: string | null
+  onKeyPress?
+  role?: string
 }) {
-  let errorStyle = [style.Error];
+  let errorStyle = [style.Error]
 
-  if (!props.error) errorStyle.push(style.ErrorInActive);
+  if (!props.error) errorStyle.push(style.ErrorInActive)
 
   return (
     <div className={style.PrimaryTextFieldContainer}>
       <InputError error={props.error} />
       <input
+        role={props.role}
         value={props.value}
         onChange={props.onChange}
         placeholder={props.placeholder}
@@ -23,5 +25,5 @@ export default function PrimaryTextField(props: {
         onKeyPress={props.onKeyPress}
       />
     </div>
-  );
+  )
 }
