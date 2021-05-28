@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import styles from "./ChatRoomsPage.module.scss"
+import styles from "./ChatRoomsPage.module.scss" 
 import RoomList from "./room_list/RoomList"
 import ChatRoom from "./room_list/chat_room/ChatRoom"
 import {Room} from "../../enums"

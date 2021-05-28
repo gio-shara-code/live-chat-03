@@ -6,16 +6,16 @@ import {Page, Room} from "../enums"
 import {v4} from "uuid"
 
 const entry = () => {
-  const [page, setPage] = useState<Page>(Page.Chat)
+  const [page, setPage] = useState<Page>(Page.Nickname)
   const [nickname, setNickname] = useState("")
   const [room, setRoom] = useState(null)
 
-  function handleNicknamePageCallback(nickname: string) {
+  const handleNicknamePageCallback = (nickname: string) => {
     setNickname(nickname)
     setPage(Page.ChatRooms)
   }
 
-  function handleRoomCallback(room: Room) {
+  const handleRoomCallback = (room: Room) => {
     setRoom(room)
     setPage(Page.Chat)
   }

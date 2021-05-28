@@ -22,16 +22,14 @@ const chatView: React.FC<Props> = ({user}) => {
     messagesEl.current.scrollTop = messagesEl.current.scrollHeight
   }
 
-  const componentDidMount = () => {
-    scrollDown()
-  }
+  const componentDidMount = () => {}
 
   const updateMessages = (message: Message) => {
     return (messages: Message[]) => [...messages, message]
   }
 
   const messagesUpdated = () => {
-    messagesEl.current.scrollTop = messagesEl.current.scrollHeight
+    scrollDown()
   }
 
   useEffect(componentDidMount, [])
@@ -42,7 +40,7 @@ const chatView: React.FC<Props> = ({user}) => {
     if (e.code === "Enter") {
       if (isMessageValid(message)) {
         const msg: Message = {
-          author: user.nickname,
+          author: "Nick",
           type: "message",
           id: v4(),
           content: message,

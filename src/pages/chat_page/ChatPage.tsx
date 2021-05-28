@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react"
+import React, {useState} from "react"
 import styles from "./ChatPage.module.scss"
 import {Socket} from "socket.io-client"
 import {User} from "../../interfaces"

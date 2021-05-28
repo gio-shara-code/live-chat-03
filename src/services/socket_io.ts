@@ -8,6 +8,5 @@ export const socketConnection = (user: User): Socket => {
   }
 
   const socket = io("ws://localhost:3000", config)
-
   return socket
 }
